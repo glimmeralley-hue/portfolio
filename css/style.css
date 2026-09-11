@@ -10,6 +10,7 @@
   --ink:#17130d;
   --ink-soft:#5b5342;
   --accent:#e0481c;
+  --accent-2:#177f6e;
   --line:rgba(23,19,13,.18);
   --serif:"Fraunces",Georgia,serif;
   --sans:"Space Grotesk","Helvetica Neue",sans-serif;
@@ -117,4 +118,17 @@ body.cursor-hover .cursor-ring{width:54px;height:54px;border-color:var(--accent)
 .foot-meta{display:flex;flex-wrap:wrap;gap:1rem 2.4rem;align-items:center;border-top:1px solid var(--line);padding-top:1.6rem;font-size:.9rem;color:var(--ink-soft)}
 .foot-meta a{text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line);transition:color .25s,border-color .25s}
 .foot-meta a:hover{color:var(--accent);border-color:var(--accent)}
+
+/* ——— dark footer: the site ends on ink ——— */
+.site-foot{background:var(--ink);color:var(--paper);border-top:0}
+.foot-cta{color:var(--paper)}
+.foot-cta em{color:var(--accent)}
+.foot-meta{border-color:rgba(244,239,230,.18);color:rgba(244,239,230,.6)}
+.foot-meta a{color:var(--paper);border-color:rgba(244,239,230,.25)}
+.foot-meta a:hover{color:var(--accent);border-color:var(--accent)}
+
+/* ——— global device polish ——— */
+html{-webkit-text-size-adjust:100%}
+body{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
 

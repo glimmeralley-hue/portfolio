@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4efe6">
   <title>Dyllan Glimmer — websites made by hand</title>
   <meta name="description" content="Dyllan Glimmer designs and codes websites — business sites, portfolios, shops.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,6 +57,54 @@
     <section class="section">
       <p class="kicker" data-reveal>The whole point</p>
       <h2 class="statement" data-reveal>This is the work. All of it.</h2>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="section-head" data-reveal>
+        <p class="kicker">Fresh off the bench</p>
+        <h2 class="section-title">Things I've built lately</h2>
+      </div>
+      <div class="gallery" id="gallery" data-reveal aria-roledescription="carousel" aria-label="Recent work">
+        <div class="g-viewport">
+          <div class="g-strip">
+            <figure class="g-slide">
+              <div class="mock">
+                <span class="m-row"><b class="m-logo"></b><span class="m-links"></span><span class="m-pill"></span></span>
+                <span class="m-copy">Small shop, zero friction.</span>
+                <span class="m-cards"><i></i><i></i><i></i></span>
+              </div>
+              <figcaption>Concept storefront — landing + shop</figcaption>
+            </figure>
+            <figure class="g-slide">
+              <div class="mock mock--type">
+                <span class="m-glyph">Aa</span>
+                <span class="m-sub">Type-first portfolio</span>
+              </div>
+              <figcaption>Type-first portfolio — variable serif</figcaption>
+            </figure>
+            <figure class="g-slide">
+              <div class="mock">
+                <span class="m-kick">Landing page</span>
+                <span class="m-head">Your idea, live.</span>
+                <span class="m-cta">Get started</span>
+              </div>
+              <figcaption>Business landing — built to convert</figcaption>
+            </figure>
+            <figure class="g-slide">
+              <div class="mock">
+                <span class="m-tiles"><i></i><i></i><i></i></span>
+                <span class="m-chart"><i style="height:30%"></i><i style="height:70%"></i><i style="height:45%"></i><i style="height:85%"></i><i style="height:60%"></i></span>
+              </div>
+              <figcaption>Dashboard UI — data, readable</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="g-ui">
+          <button class="g-btn g-prev" aria-label="Previous slide">←</button>
+          <button class="g-btn g-next" aria-label="Next slide">→</button>
+          <div class="g-dots"></div>
+        </div>
+      </div>
     </section>
 
     <section class="section" style="padding-top:0">
@@ -115,5 +164,6 @@
 
   <script src="js/main.js"></script>
   <script src="js/home.js"></script>
+  <script src="js/gallery.js"></script>
 </body>
 </html>
