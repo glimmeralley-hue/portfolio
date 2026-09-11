@@ -65,8 +65,11 @@ body.nav-open .nav-toggle span{background:transparent}
 body.nav-open .nav-toggle span::before{transform:translateY(5px) rotate(45deg)}
 body.nav-open .nav-toggle span::after{transform:translateY(-5px) rotate(-45deg)}
 @media(max-width:760px){
-  .site-nav{position:fixed;inset:0;background:var(--paper);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:1.2rem;padding:var(--pad);transform:translateY(-102%);transition:transform .55s var(--ease);z-index:90}
-  body.nav-open .site-nav{transform:none}
+  /* no backdrop-filter on the header here: it would become the containing block
+     for the fixed nav and un-hide the closed menu (links bleeding over the page) */
+  .site-head{backdrop-filter:none;background:rgba(244,239,230,.96)}
+  .site-nav{position:fixed;inset:0;background:var(--paper);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:1.2rem;padding:var(--pad);transform:translateY(-102%);visibility:hidden;transition:transform .55s var(--ease),visibility 0s .55s;z-index:90}
+  body.nav-open .site-nav{transform:none;visibility:visible;transition:transform .55s var(--ease)}
   .site-nav a{font-family:var(--serif);font-size:clamp(2rem,9vw,3.2rem);color:var(--ink)}
   .site-nav a::after{display:none}
   .nav-toggle{display:block;position:relative;z-index:95}
@@ -90,7 +93,7 @@ body.cursor-hover .cursor-ring{width:54px;height:54px;border-color:var(--accent)
 /* scroll reveal */
 [data-reveal]{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 [data-reveal].in-view{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}.hero-title .lt{animation:none;transform:none}}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}.hero-title .lt{animation:none;transform:none}.site-nav{transition:none}}
 
 /* marquee */
 .marquee{overflow:hidden;border-block:1px solid var(--line);padding:1rem 0;user-select:none}

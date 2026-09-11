@@ -3,9 +3,14 @@
   var letters=document.querySelectorAll(".hero-title .lt");
   var fine=matchMedia("(pointer:fine)").matches;
 
-  /* after the rise-in animation, hand control to JS so magnets can move them */
+  /* after the rise-in animation, hand control to JS so magnets can move them.
+     must pin transform:none inline BEFORE killing the animation, otherwise the
+     letters snap back to their hidden translateY(120%) base state */
   letters.forEach(function(l){
-    l.addEventListener("animationend",function(){l.style.animation="none";});
+    l.addEventListener("animationend",function(){
+      l.style.transform="none";
+      l.style.animation="none";
+    });
   });
 
   if(fine&&letters.length){

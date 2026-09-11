@@ -152,7 +152,10 @@ a.row:hover{padding-left:.8rem}
 /* ——— small screens: stack, shrink, relax ——— */
 @media(max-width:640px){
   .section{padding-block:3.2rem}
-  .hero{padding-top:7.5rem;padding-bottom:3.5rem}
+  .hero{min-height:auto;padding-top:7.5rem;padding-bottom:3.5rem}
+  .orb--a{width:150px;top:4%;right:5%}
+  .orb--b{width:96px;bottom:3%;left:auto;right:6%}
+  .hero-note{position:static;display:block;margin-top:2.6rem}
   .row{flex-direction:column;gap:.3rem;padding:1.25rem 0}
   .row p{max-width:100%}
   .marquee-group{font-size:1.05rem;gap:1.6rem;padding-right:1.6rem}
