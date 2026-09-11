@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playground — Dyllan Glimmer</title>
+  <meta name="description" content="Live interactive experiments in HTML, CSS and JavaScript — generative art, variable fonts, spring physics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317130d'/%3E%3Ccircle cx='32' cy='32' r='13' fill='%23e0481c'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/demos.css">
+</head>
+<body>
+  <header class="site-head">
+    <a class="brand" href="index.html">Dyllan <em>Glimmer</em></a>
+    <nav class="site-nav">
+      <a href="index.html"><sup>01</sup>Home</a>
+      <a href="playground.html"><sup>02</sup>Playground</a>
+      <a href="about.html"><sup>03</sup>About</a>
+      <a href="commissions.html"><sup>04</sup>Commissions</a>
+      <a href="contact.html"><sup>05</sup>Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu"><span></span></button>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <p class="kicker" data-reveal>The playground</p>
+      <h1 data-reveal>Touch <em style="color:var(--accent)">everything.</em></h1>
+      <p class="lede" data-reveal>Four live experiments in HTML, CSS and JavaScript. Play with them.</p>
+    </section>
+
+    <section class="demo" id="ink" data-reveal>
+      <div class="demo-bar">
+        <div>
+          <h3>01 · Ink Field</h3>
+          <p>Generative particles riding an invisible current. Move your cursor through them — they'll move out of the way.</p>
+        </div>
+        <div class="demo-actions">
+          <button class="btn" id="inkShuffle">Shuffle palette</button>
+          <button class="btn btn--solid" id="inkSave">Save PNG</button>
+        </div>
+      </div>
+      <div class="demo-stage" style="min-height:440px"><canvas id="inkCanvas"></canvas></div>
+      <div class="demo-note">
+        <span class="chip">Canvas 2D</span><span class="chip">Flow field</span><span class="chip">Zero libraries</span>
+        <span>~90 lines of vanilla JS. Yes, you can download the art.</span>
+      </div>
+    </section>
+
+    <section class="demo" id="letters" data-reveal>
+      <div class="demo-bar">
+        <div>
+          <h3>02 · Type Specimen</h3>
+          <p>Run your cursor across the letters — their weight follows your distance. On touch screens, they wave politely instead.</p>
+        </div>
+      </div>
+      <div class="demo-stage">
+        <div class="specimen" id="specimen">
+          <span class="spec-char">A</span><span class="spec-char">a</span><span class="spec-char">G</span><span class="spec-char">g</span><span class="spec-char">R</span><span class="spec-char">&amp;</span><span class="spec-char">Q</span><span class="spec-char">?</span>
+        </div>
+      </div>
+      <div class="demo-note">
+        <span class="chip">Variable font</span><span class="chip">Fraunces · wght 100–900</span>
+        <span>One variable axis, driven live by pointer distance.</span>
+      </div>
+    </section>
+
+    <section class="demo" id="elastic" data-reveal>
+      <div class="demo-bar">
+        <div>
+          <h3>03 · Rubber Words</h3>
+          <p>Grab the word. Drag it anywhere. Let go — spring physics does the rest.</p>
+        </div>
+      </div>
+      <div class="demo-stage">
+        <span class="elastic-word" id="elasticWord">stretchy</span>
+      </div>
+      <div class="demo-note">
+        <span class="chip">Pointer events</span><span class="chip">Spring physics</span>
+        <span>Stiffness, damping, one rAF loop. That's the whole trick.</span>
+      </div>
+    </section>
+
+    <section class="demo" id="ui" data-reveal>
+      <div class="demo-bar">
+        <div>
+          <h3>04 · Everyday UI</h3>
+          <p>A working carousel, magnetic buttons and a switch — the components every real website actually needs.</p>
+        </div>
+      </div>
+      <div class="demo-stage">
+        <div class="ui-wrap">
+          <div class="car">
+            <div class="car-track" id="carTrack">
+              <div class="car-slide">"I asked for a website. I got a website that answers emails for me." <footer>— a happy client, probably</footer></div>
+              <div class="car-slide">"Fast, honest, and the thing actually loads on mobile." <footer>— another satisfied human</footer></div>
+              <div class="car-slide">"I asked who built this site. Then I hired him." <footer>— you, soon</footer></div>
+            </div>
+          </div>
+          <div class="car-controls">
+            <button class="car-btn" id="carPrev" aria-label="Previous">←</button>
+            <button class="car-btn" id="carNext" aria-label="Next">→</button>
+            <div class="car-dots" id="carDots">
+              <button class="car-dot on" aria-label="Slide 1"></button>
+              <button class="car-dot" aria-label="Slide 2"></button>
+              <button class="car-dot" aria-label="Slide 3"></button>
+            </div>
+          </div>
+          <div class="btn-row">
+            <button class="btn magnetic">Hover me</button>
+            <button class="btn btn--solid magnetic">Hover me too</button>
+          </div>
+          <div class="switch-row">
+            <button class="switch" id="demoSwitch" aria-label="Demo switch"></button>
+            <p>dark ideas, bright execution — your call</p>
+          </div>
+        </div>
+      </div>
+      <div class="demo-note">
+        <span class="chip">Carousel</span><span class="chip">Magnetic hover</span><span class="chip">Accessible controls</span>
+        <span>The boring stuff, done right — because clients need it.</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <p class="kicker" data-reveal>Want something like this on your site?</p>
+    <a class="foot-cta" data-reveal href="contact.html">Let's build yours <span class="arr">↗</span></a>
+    <div class="foot-meta">
+      <a href="mailto:dyllanglimmer@gmail.com">dyllanglimmer@gmail.com</a>
+      <a href="https://instagram.com/dyllanglimmer" target="_blank" rel="noopener">@dyllanglimmer</a>
+      <span>© <span data-year>2026</span> Dyllan Glimmer — hand-built</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/playground.js"></script>
+</body>
+</html>
